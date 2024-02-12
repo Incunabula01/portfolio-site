@@ -7,7 +7,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
 }
-const components = {
+const htmlElements = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
@@ -168,11 +168,11 @@ interface MdxProps {
 }
 
 export function Mdx({ code }: MdxProps) {
-	const Component = useMDXComponent(code);
+	const MDXComponent = useMDXComponent(code);
 
 	return (
 		<div className="mdx">
-			<Component components={components} />
+			<MDXComponent components={htmlElements} />
 		</div>
 	);
 }

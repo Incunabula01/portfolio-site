@@ -1,24 +1,24 @@
 import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
+import { Space_Grotesk, DM_Serif_Display } from "@next/font/google";
+
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "jwidener-portfolio",
+    template: "%s",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Seasoned UI/UX Developer who crafts great user experiences!",
   openGraph: {
-    title: "chronark.com",
+    title: "jwidener-portfolio",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+      "Seasoned UI/UX Developer who crafts great user experiences!",
+    url: "",
+    siteName: "",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "",
         width: 1920,
         height: 1080,
       },
@@ -37,22 +37,20 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  twitter: {
-    title: "Chronark",
-    card: "summary_large_image",
-  },
   icons: {
     shortcut: "/favicon.png",
   },
 };
-const inter = Inter({
+
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-spaceGrotesk",
 });
 
-const calSans = LocalFont({
-  src: "../public/fonts/CalSans-SemiBold.ttf",
-  variable: "--font-calsans",
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-dmSerif",
+  weight: "400"
 });
 
 export default function RootLayout({
@@ -61,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html lang="en" className={[spaceGrotesk.variable, dmSerif.variable].join(" ")}>
       <head>
         <Analytics />
       </head>
