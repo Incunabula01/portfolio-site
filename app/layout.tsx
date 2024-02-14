@@ -1,5 +1,5 @@
 import "../global.css";
-import { Space_Grotesk, DM_Serif_Display } from "@next/font/google";
+import { Space_Grotesk, DM_Serif_Display } from "next/font/google";
 
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";

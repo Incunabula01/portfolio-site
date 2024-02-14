@@ -7,6 +7,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
 }
+
 const htmlElements = {
 	h1: ({ className, ...props }) => (
 		<h1
@@ -161,6 +162,21 @@ const htmlElements = {
 		/>
 	),
 	Image,
+	JustifyText: ({ children }) => {
+		const regex = /\(([^)]+)\)/;
+		const matches = children.props.children.match(regex);
+		const firstText = children.props.children.replace(regex, '').trim();
+		const parenthesesText = `( ${matches[1].trim()} )`;
+		const textArr = [firstText, parenthesesText];
+
+		return (
+			<div className="flex items-center flex-col lg:flex-row lg:justify-between">
+				{textArr.map((txt, idx) => (
+					<h3 key={`text-${idx}`} className="text-center scroll-m-20 text-2xl font-semibold tracking-tight lg:mt-4 lg:text-left">{txt}</h3>
+				))}
+			</div>
+		);
+	}
 };
 
 interface MdxProps {
