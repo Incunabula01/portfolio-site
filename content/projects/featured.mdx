@@ -1,76 +1,23 @@
 ---
-title: "Lorem Ippsum"
-description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
-repository: "incunabula/lorem"
-date: "2022-11-13"
+title: "Analytics Dashboard"
+description: "Next.js Dashboard utilizing Prisma/MongoDB. Data visualization powered by Apex Charts."
+repository: "Incunabula01/dashboard-app"
+url: "https://dashboard-app-x4pi.vercel.app/"
+date: "2023-08-28"
 published: true
 ---
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+This project served as a proof of concept for a freelance gig that required Next.js to develop a dashboard web app, leveraging its app router feature. The UI of the app was custom-built using Tailwind CSS, charts rendered using ApexCharts, and data sourced from mock data within a MongoDB database. 
 
-- Fully typed
-- Zero dependencies
-- Serializable to store in a database
+Please login with these credientials when visiting the live site: 
+`
+t41327253@gmail.com
+`
 
-## Install
-
-```sh-session
-npm i @incunabula/lorem
-```
-
-## Usage
-
-```ts
-import { AccessControl, Role } from "incunabula/lorem";
-
-/**
- * Define all your resources and their access patterns
- *
- * key => resource
- * value => array of access types
- */
-type Statements = {
-  user: ["read", "write", "dance"];
-  team: ["read", "write"];
-};
-
-/**
- * Create an access control instance and pass the Statements type to enjoy full
- * type safety
- */
-const ac = new AccessControl<Statements>();
-
-/**
- * Now you can define one or more roles by specifying the access permissions
- *
- * This is already fully typed and typescript will let you know if you try to
- * use anything, that is not defined in the Statements type.
- */
-const role = ac.newRole({
-  user: ["read", "write"],
-  team: ["read"],
-});
-
-/**
- * Simulate storing and retrieving the role in a database
- *
- * The idea here is, that you can store permissions alongside an API token.
- * Now, when you verify the token, you can also verify the access permissions.
- */
-const serialized = role.toString();
-
-/**
- * Note how you can pass in the Statements type again, to get full type safety
- */
-const recovered = Role.fromString<Statements>(serialized);
-
-/**
- * Validate the role by specifying the resource and the required access
- *
- * everything is fully typed
- */
-const res = recovered.authorize({"team", ["read"]});
-
-// res.success => boolean
-// res.error => string | undefined provides a reason for failure
-```
+---
+<ImageCarousel>
+  ![Dashboard Landing Page](/dashboard-1.png)
+  ![Dashboard Products Page](/dashboard-2.png)
+  ![Dashboard Producsts Modal](/dashboard-3.png)
+  ![Dashboard Mobile View](/dashboard-mobile.jpg)
+</ImageCarousel>

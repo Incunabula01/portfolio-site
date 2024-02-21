@@ -2,6 +2,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Carousel from "./Carousel";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 function clsx(...args: any) {
@@ -176,7 +177,14 @@ const htmlElements = {
 				))}
 			</div>
 		);
-	}
+	},
+	ImageCarousel: ({ children }) => (
+
+		<Carousel>
+			{children.props.children}
+		</Carousel>
+
+	)
 };
 
 interface MdxProps {

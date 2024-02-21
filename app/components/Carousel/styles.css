@@ -1,0 +1,39 @@
+[class^="number-slide"],
+[class*=" number-slide"] {
+  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 300px;
+  max-height: 100vh;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: -40px;
+}
+
+.arrow--right {
+  left: auto;
+  right: -40px;
+}
+
+.arrow--disabled {
+  fill: grey;
+}
+
+.next-image-no-inset {
+  inset: auto !important;
+}

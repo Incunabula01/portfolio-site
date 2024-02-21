@@ -14,13 +14,16 @@ import Image from "next/image";
 import { allPages } from '@/.contentlayer/generated';
 import { Mdx } from "./components/mdx";
 
+interface NavConfig {
+  name: string;
+  href: string;
+}
 interface IconConfig {
   name: string;
   component: IconType;
 }
 
-
-const navigation = [
+const navigation: NavConfig[] = [
   { name: "Projects", href: "/projects" },
   { name: "Work", href: "/work" },
   { name: "Contact", href: "/contact" },
@@ -34,7 +37,6 @@ const icons: IconConfig[] = [
   { name: 'React', component: FaReact },
   { name: 'GitHub', component: FaGithub },
 ];
-
 
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -117,7 +119,7 @@ export default function Home() {
               {icons.map((icon, index) => {
                 const IconComponent = icon.component;
                 return (
-                  <Card>
+                  <Card key={icon.name}>
                     <div className="p-2 md:p-4 text-zinc-600" title={icon.name}>
                       <IconComponent key={index} className="w-24 h-24" />
                     </div>
