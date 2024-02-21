@@ -37,3 +37,15 @@
 .next-image-no-inset {
   inset: auto !important;
 }
+
+@media only screen and (max-width: 768px) {
+  .arrow {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .arrow {
+    display: block;
+  }
+}

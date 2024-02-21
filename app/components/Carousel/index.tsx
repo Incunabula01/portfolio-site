@@ -23,7 +23,7 @@ function Arrow(props: {
     return (
         <svg
             onClick={props.onClick}
-            className={`arrow ${props.left ? "arrow--left fill-cyan-600" : "arrow--right  fill-cyan-600 sm:hidden md:block"
+            className={`arrow ${props.left ? "arrow--left fill-cyan-600" : "arrow--right  fill-cyan-600"
                 } ${disabled}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
