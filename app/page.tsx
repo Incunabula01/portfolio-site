@@ -50,40 +50,42 @@ export default function Home() {
   const handleNav = () => {
     router.push('/projects');
   }
+
+  const getPage = allPages.find(el => el.title === 'about-me');
   return (
     <>
-      <section className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+      <section className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-[#0F172A] via-cyan-900 from-[#0F172A]">
         <nav className="my-16 animate-fade-in">
           <ul className="flex items-center justify-center gap-4">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+                className="text-sm duration-500 text-cyan-500 hover:text-cyan-300"
               >
                 {item.name}
               </Link>
             ))}
           </ul>
         </nav>
-        <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+        <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-cyan-300/0 via-cyan-300/50 to-cyan-300/0" />
         <Particles
           className="absolute inset-0 -z-10 animate-fade-in"
           quantity={1000}
         />
-        <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+        <h1 className="z-10 text-4xl text-transparent duration-1000 bg-amber-50 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
           Joe Widener
         </h1>
 
-        <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+        <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-cyan-300/0 via-cyan-300/50 to-cyan-300/0" />
         <div className="my-16 text-center animate-fade-in">
-          <h2 className="text-xl text-zinc-500 ">
+          <h2 className="text-xl text-cyan-500 ">
             UI/UX Developer
           </h2>
         </div>
         <div className="animate-fade-in">
           <Card>
-            <div onClick={() => handleScroll()} className="cursor-pointer p-2 md:p-4 text-zinc-300">
+            <div onClick={() => handleScroll()} className="cursor-pointer p-2 md:p-4 text-cyan-300">
               <ChevronDown className="w-8 h-8 " />
             </div>
 
@@ -91,7 +93,7 @@ export default function Home() {
         </div>
 
       </section>
-      <section className="flex flex-col items-center justify-center w-screen bg-zinc-200">
+      <section className="flex flex-col items-center justify-center w-screen bg-amber-50">
         <div ref={targetRef} className="md:flex md:flex-row">
           <div className="p-12 md:p-24 flex flex-col gap-8  items-center w-full md:w-1/2">
             <Image src="/profile.jpg"
@@ -100,19 +102,19 @@ export default function Home() {
               alt="profile image"
               className="rounded-full"
             />
-            <Mdx code={allPages[1].body.code} />
+            <Mdx code={getPage?.body.code ?? ''} />
           </div>
 
           <div className="relative my-14 hidden md:block">
-            <div className="absolute inset-y-0 left-0 bg-zinc-500 w-px"></div>
+            <div className="absolute inset-y-0 left-0 bg-cyan-500 w-px"></div>
           </div>
           <div className="md:hidden mx-7">
-            <hr className="bg-zinc-500 w-full h-px" />
+            <hr className="bg-cyan-500 w-full h-px" />
           </div>
 
           <div className="flex flex-col items-center justify-center w-full md:w-1/2 gap-4">
             <div className="py-4">
-              <h2 className="text-xl text-zinc-600">My Tech Stack:</h2>
+              <h2 className="text-xl text-cyan-600">My Tech Stack:</h2>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -120,7 +122,7 @@ export default function Home() {
                 const IconComponent = icon.component;
                 return (
                   <Card key={icon.name}>
-                    <div className="p-2 md:p-4 text-zinc-600" title={icon.name}>
+                    <div className="p-2 md:p-4 text-cyan-600" title={icon.name}>
                       <IconComponent key={index} className="w-24 h-24" />
                     </div>
                   </Card>
@@ -130,7 +132,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center justify-center py-4">
-          <div className="text-zinc-500 md:translate-x-0.5">
+          <div className="text-cyan-500 md:translate-x-0.5">
             <ChevronDown className="w-8 h-8 " />
           </div>
         </div>
@@ -139,8 +141,8 @@ export default function Home() {
       </section>
       <div className="flex items-center justify-center py-8">
         <Card>
-          <div onClick={() => handleNav()} className="cursor-pointer p-2 md:p-4 text-zinc-300">
-            <p className="text-zinc-400">Learn More</p>
+          <div onClick={() => handleNav()} className="cursor-pointer p-2 md:p-4 text-cyan-300">
+            <p className="text-cyan-400">Learn More</p>
           </div>
 
         </Card>

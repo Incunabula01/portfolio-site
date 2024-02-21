@@ -29,12 +29,12 @@ export const Header: React.FC<Props> = ({ work }) => {
 	return (
 		<header
 			ref={ref}
-			className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black"
+			className="relative isolate overflow-hidden bg-gradient-to-tl from-[#0F172A] via-cyan-900 from-[#0F172A]"
 		>
 			<div
 				className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${isIntersecting
-					? "bg-zinc-900/0 border-transparent"
-					: "bg-white/10  border-zinc-200 lg:border-transparent"
+					? "bg-cyan-900/0 border-transparent"
+					: "bg-white/10  border-cyan-200 lg:border-transparent"
 					}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
@@ -45,8 +45,8 @@ export const Header: React.FC<Props> = ({ work }) => {
 					<Link
 						href="/projects"
 						className={`duration-200 hover:font-medium ${isIntersecting
-							? " text-zinc-400 hover:text-zinc-100"
-							: "text-zinc-600 hover:text-zinc-900"
+							? " text-cyan-400 hover:text-cyan-100"
+							: "text-cyan-600 hover:text-cyan-900"
 							} `}
 					>
 						<ArrowLeft className="w-6 h-6 " />
@@ -59,7 +59,7 @@ export const Header: React.FC<Props> = ({ work }) => {
 						<h1 className="text-4xl font-bold  text-white sm:text-6xl font-display capitalize">
 							{work.title}
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-zinc-300">
+						<p className="mt-6 text-lg leading-8 text-cyan-300">
 							{`Last updated: ${Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
 								new Date(work.date),
 							)}`}
