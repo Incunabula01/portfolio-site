@@ -1,10 +1,9 @@
 "use client";
-import { ReactElement, SetStateAction, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./styles.css";
 
-import Image from 'next/image';
 import Spinner from '../spinner';
 
 interface CarouselProps {
@@ -67,16 +66,7 @@ function Carousel({ children }: { children: CarouselArray }) {
                         result.push(
 
                             <div key={alt} className={`keen-slider__slide number-slide${index}`}>
-
-                                <Image
-                                    key={alt}
-                                    src={src}
-                                    fill
-                                    alt={alt}
-
-                                    className='next-image-no-inset'
-                                />
-
+                                <img src={src} alt={alt} />
                             </div>
 
                         );
