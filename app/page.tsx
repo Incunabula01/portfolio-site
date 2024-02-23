@@ -52,9 +52,10 @@ export default function Home() {
   }
 
   const getPage = allPages.find(el => el.title === 'about-me');
+
   return (
     <>
-      <section className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-[#0F172A] via-cyan-900 from-[#0F172A]">
+      <section className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-t from-transparent via-cyan-900 from-[#0F172A]">
         <nav className="my-16 animate-fade-in">
           <ul className="flex items-center justify-center gap-4">
             {navigation.map((item) => (
@@ -76,7 +77,6 @@ export default function Home() {
         <h1 className="z-10 text-4xl text-transparent duration-1000 bg-amber-50 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
           Joe Widener
         </h1>
-
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-cyan-300/0 via-cyan-300/50 to-cyan-300/0" />
         <div className="my-16 text-center animate-fade-in">
           <h2 className="text-xl text-cyan-500 ">
@@ -139,14 +139,14 @@ export default function Home() {
 
 
       </section>
-      <div className="flex items-center justify-center py-8">
+      <section className="flex items-center justify-center py-8">
         <Card>
           <div onClick={() => handleNav()} className="cursor-pointer p-2 md:p-4 text-cyan-300">
             <p className="text-cyan-400">Learn More</p>
           </div>
 
         </Card>
-      </div>
+      </section>
     </>
 
 

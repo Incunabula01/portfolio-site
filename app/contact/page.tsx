@@ -19,9 +19,9 @@ const socials = [
 	},
 ];
 
-export default function Example() {
+export default function Contact() {
 	return (
-		<div className=" bg-gradient-to-tl from-cyan-900/0 via-cyan-900 to-cyan-900/0">
+		<div className=" bg-gradient-to-t from-cyan-900 to-cyan-900/0">
 			<Navigation />
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
 				<div className={`grid w-full grid-cols-${socials.length} gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-2 lg:gap-16`}>

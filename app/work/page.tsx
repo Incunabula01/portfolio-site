@@ -10,7 +10,7 @@ function Work() {
     if (getPage) {
         const { title, date, body } = getPage;
         return (
-            <div className=" bg-gradient-to-tl from-cyan-900/0 via-cyan-900 to-cyan-900/0">
+            <div className=" bg-gradient-to-t from-cyan-900/0 via-cyan-900 to-cyan-900/0">
                 <Header work={{ title, date }} />
                 <div className="bg-amber-50 min-h-screen">
 
